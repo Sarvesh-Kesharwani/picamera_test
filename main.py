@@ -31,6 +31,7 @@ known_face_encodings = np.array(list(all_face_encodings.values()))
 face_locations = []
 face_encodings = []
 face_names = []
+process_this_frame = True
 
 while True:
     print("Capturing image.")
