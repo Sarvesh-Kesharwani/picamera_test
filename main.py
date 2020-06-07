@@ -39,7 +39,7 @@ while True:
     # Loop over each face found in the frame to see if it's someone we know.
     for face_encoding in face_encodings:
         # See if the face is a match for the known face(s)
-        match = face_recognition.compare_faces([known_face_encodings], face_encoding)
+        match = face_recognition.compare_faces(known_face_encodings, face_encoding)
         name = "<Unknown Person>"
 
         if match[0]:
