@@ -25,6 +25,7 @@ known_face_encodings = np.array(list(all_face_encodings.values()))
 # Initialize some variables
 face_locations = []
 face_encodings = []
+face_names = []
 
 while True:
     print("Capturing image.")
@@ -39,10 +40,14 @@ while True:
     # Loop over each face found in the frame to see if it's someone we know.
     for face_encoding in face_encodings:
         # See if the face is a match for the known face(s)
-        match = face_recognition.compare_faces(known_face_encodings, face_encoding)
-        name = "<Unknown Person>"
+        matches = face_recognition.compare_faces(known_face_encodings, face_encoding)
 
-        if match[0]:
-            name = "Sarvesh Kesharwani"
+        face_distances = face_recognition.face_distance(known_face_encodings, face_encoding)
+        best_match_index = np.argmin(face_distances)
+        if matches[best_match_index]:
+            name = known_face_names[best_match_index]
+        else:
+            name = "Unknown"
+        face_names.append(name)
 
         print("I see someone named {}!".format(name))
