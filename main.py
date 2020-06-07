@@ -58,7 +58,7 @@ while True:
                 name = "Unknown"
             face_names.append(name)
 
-    print(*face_name, sep = ", ")
+    print(*face_names, sep = ", ")
 
     #play names of detected people
     lang = "hi"
