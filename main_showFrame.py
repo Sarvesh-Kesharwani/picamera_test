@@ -4,6 +4,7 @@ import pickle
 import numpy as np
 import playsound
 from google_speech import Speech
+import cv2
 
 # Get a reference to the Raspberry Pi camera.
 camera = picamera.PiCamera()
