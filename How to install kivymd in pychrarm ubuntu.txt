@@ -1,0 +1,13 @@
+
+#install kivy using conda or pip
+
+#install kivymd with this only commmand 
+python3 -m pip install --force-reinstall git+https://gitlab.com/kivymd/KivyMD.git
+
+#install pyjnius using conda
+
+
+#install python-for-android, cython, player, google_speech & sox.
+
+
+
